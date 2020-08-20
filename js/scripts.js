@@ -4,7 +4,7 @@ $(document).ready(function() {
     let numArray = num.split("");
     
     function converter(array){
-      newArray = [];
+      let newArray = [];
       for (const element of array) {
         if (element === "1000") {
           newArray.push ("M");
@@ -23,6 +23,32 @@ $(document).ready(function() {
         };
       };
       return newArray;
+    };
+    
+    function singleDigit(number){
+    let digit;
+   
+      if (number === "1"){
+      digit = "I";
+      } else if (number === "2"){
+        digit = "II";
+      } else if (number === "3"){
+        digit = "III";
+      } else if (number === "4"){
+        digit = "IV";
+      } else if (number === "5"){
+        digit = "5";      
+      } else if (number === "6"){
+        digit = "VI";
+      } else if (number === "7"){
+        digit = "VII";
+      } else if (number === "8"){
+        digit = "VIII";
+      } else (number === "9"){
+        digit = "IX";
+      };
+
+      return digit;
     };
   
 
