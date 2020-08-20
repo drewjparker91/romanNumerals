@@ -2,6 +2,7 @@ $(document).ready(function() {
   $("#inputNumber").submit(function() {
     let num = $("#inputNum").val();
     let numArray = num.split("");
+    let returnNum = "";
     
     function converter(array){
       let newArray = [];
@@ -24,6 +25,7 @@ $(document).ready(function() {
       };
       return newArray;
     };
+    [-i]
     
     function singleDigit(number){
     let digit;
@@ -47,11 +49,74 @@ $(document).ready(function() {
       } else (number === "9"){
         digit = "IX";
       };
-
+      
       return digit;
     };
   
+    function tensDigit(number){
+      let digit;
+     
+        if (number === "1"){
+        digit = "X";
+        } else if (number === "2"){
+          digit = "XX";
+        } else if (number === "3"){
+          digit = "XXX";
+        } else if (number === "4"){
+          digit = "XL";
+        } else if (number === "5"){
+          digit = "L";      
+        } else if (number === "6"){
+          digit = "LX";
+        } else if (number === "7"){
+          digit = "LXX";
+        } else if (number === "8"){
+          digit = "LXXX";
+        } else (number === "9"){
+          digit = "XC";
+        };
+  
+        return digit;
+      };
 
+      function hundredsDigit(number){
+          if (number === "1"){
+            digit.push = "C";
+          } else if (number === "2"){
+            digit.push = "CC";
+          } else if (number === "3"){
+            digit = "CCC";
+          } else if (number === "4"){
+            digit = "CD";
+          } else if (number === "5"){
+            digit = "D";      
+          } else if (number === "6"){
+            digit = "DC";
+          } else if (number === "7"){
+            digit = "DCC";
+          } else if (number === "8"){
+            digit = "DCCC";
+          } else (number === "9"){
+            digit = "CM";
+          };
+      
+          return digit;
+        }; 
+
+      function thousandsDigit(number){
+        let digit;
+       
+          if (number === "1"){
+          digit = "M";
+          } else if (number === "2"){
+            digit = "MM";
+          } else (number === "3"){
+            digit = "MMM";
+          };
+      
+          return digit;
+        };
+        
     outputNumeral = converter(numArray);
 
     $("#romanNumeral").text(outputNumeral);
@@ -59,3 +124,9 @@ $(document).ready(function() {
     event.preventDefault();
   })
 });
+
+
+
+
+
+
